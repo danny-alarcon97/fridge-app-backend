@@ -18,86 +18,103 @@ db.on("error", (error) => {
 });
 
 // SCHEMA: Define the collection's schema.
-const mangaSchema = mongoose.Schema({
-  title: { type: String, required: true },
-  volume: { type: Number, required: true },
-  author: { type: String, required: true },
-  released: { type: Date, required: true },
-  language: { type: String, required: true },
+const itemSchema = mongoose.Schema({
+  name: { type: String, required: true },
+  brand: { type: String, required: false },
+  purchaseDate: { type: Date, required: false },
+  expireDate: { type: Date, required: false },
+  price: { type: Number, required: false },
+  amountOf: { type: Number, required: True },
 });
 
 // Compile the model from the schema
-// by defining the collection name "Manga".
-const Manga = mongoose.model("Manga", mangaSchema);
+// by defining the collection name "Item".
+const Item = mongoose.model("Item", itemSchema);
 
 // CREATE model
-const createManga = async (title, volume, author, released, language) => {
+const createItem = async (
+  name,
+  brand,
+  purchaseDate,
+  expireDate,
+  price,
+  amountOf
+) => {
   try {
-    const manga = new Manga({
-      title,
-      volume,
-      author,
-      released,
-      language,
+    const item = new Item({
+      name,
+      brand,
+      purchaseDate,
+      expireDate,
+      price,
+      amountOf,
     });
-    return await manga.save();
+    return await item.save();
   } catch (error) {
-    console.error("Create Manga Error:", error);
+    console.error("Create Item Error:", error);
     throw error;
   }
 };
 
 // RETRIEVE model
-const retrieveMangas = async () => {
+const retrieveItems = async () => {
   try {
-    return await Manga.find();
+    return await Item.find();
   } catch (error) {
-    console.error("Retrieve Mangas Error:", error);
+    console.error("Retrieve Items Error:", error);
     throw error;
   }
 };
 
 // RETRIEVE by ID
-const retrieveMangaByID = async (_id) => {
+const retrieveItemByID = async (_id) => {
   try {
-    return await Manga.findById(_id);
+    return await Item.findById(_id);
   } catch (error) {
-    console.error("Retrieve Manga by ID Error:", error);
+    console.error("Retrieve Item by ID Error:", error);
     throw error;
   }
 };
 
 // UPDATE model
-const updateManga = async (_id, title, volume, author, released, language) => {
+const updateItem = async (
+  _id,
+  name,
+  brand,
+  purchaseDate,
+  expireDate,
+  price,
+  amountOf
+) => {
   try {
-    const result = await Manga.findByIdAndUpdate(
+    const result = await Item.findByIdAndUpdate(
       _id,
-      { title, volume, author, released, language },
+      { name, brand, purchaseDate, expireDate, price, amountOf },
       { new: true }
     );
     return result;
   } catch (error) {
-    console.error("Update Manga Error:", error);
+    console.error("Update Item Error:", error);
     throw error;
   }
 };
 
 // DELETE model
-const deleteMangaById = async (_id) => {
+const deleteItemById = async (_id) => {
   try {
-    const result = await Manga.deleteOne({ _id });
+    const result = await Item.deleteOne({ _id });
     return result.deletedCount;
   } catch (error) {
-    console.error("Delete Manga Error:", error);
+    console.error("Delete Item Error:", error);
     throw error;
   }
 };
 
 // EXPORT the variables for use in the controller file.
 export {
-  createManga,
-  retrieveMangas,
-  retrieveMangaByID,
-  updateManga,
-  deleteMangaById,
+  createItem,
+  retrieveItems,
+  retrieveItemByID,
+  updateItem,
+  deleteItemById,
 };

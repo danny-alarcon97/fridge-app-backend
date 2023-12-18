@@ -1,11 +1,11 @@
 {
-  "name": "mangas-backend",
+  "name": "fridge app backend",
   "version": "2023",
-  "description": "CS290 backend",
-  "main": "mangas-model.mjs",
+  "description": "fridge app mongodb backend",
+  "main": "items-model.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon mangas-controller.mjs"
+    "start": "nodemon items-controller.mjs"
   },
   "author": "Daniel Alarcon Huesca",
   "license": "ISC",
