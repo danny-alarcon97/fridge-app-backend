@@ -24,7 +24,8 @@ const itemSchema = mongoose.Schema({
   purchaseDate: { type: Date, required: false },
   expireDate: { type: Date, required: false },
   price: { type: Number, required: false },
-  amountOf: { type: Number, required: True },
+  compartment: { type: String, required: true },
+  amountOf: { type: Number, required: true },
 });
 
 // Compile the model from the schema
@@ -38,6 +39,7 @@ const createItem = async (
   purchaseDate,
   expireDate,
   price,
+  compartment,
   amountOf
 ) => {
   try {
@@ -47,6 +49,7 @@ const createItem = async (
       purchaseDate,
       expireDate,
       price,
+      compartment,
       amountOf,
     });
     return await item.save();
@@ -84,12 +87,13 @@ const updateItem = async (
   purchaseDate,
   expireDate,
   price,
+  compartment,
   amountOf
 ) => {
   try {
     const result = await Item.findByIdAndUpdate(
       _id,
-      { name, brand, purchaseDate, expireDate, price, amountOf },
+      { name, brand, purchaseDate, expireDate, price, compartment, amountOf },
       { new: true }
     );
     return result;
