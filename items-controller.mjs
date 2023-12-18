@@ -86,6 +86,7 @@ app.get("/items/:_id", (req, res) => {
 app.put("/items/:_id", (req, res) => {
   items
     .updateItem(
+      req.params._id,
       req.body.name,
       req.body.brand,
       req.body.purchaseDate,

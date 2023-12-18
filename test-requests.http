@@ -1,93 +1,104 @@
 ### CREATE five documents.
-POST http://localhost:3000/mangas HTTP/1.1
+POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "title": "One Piece",
-    "volume": 106,
-    "author": "Eiichiro Oda",
-    "released": 2023,
-    "language": "English"
+    "name": "American Cheese",
+    "brand": "Kraft",
+    "purchaseDate": "2023-12-18",
+    "expireDate": "2024-04-23",
+    "price": 12.99,
+    "compartment": "Fridge",
+    "amountOf": 3
 }
 
 
 ### CREATE 2
-POST http://localhost:3000/mangas HTTP/1.1
+POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Kaiju No.8",
-    "volume": 2,
-    "author": "Naoya Matsumoto",
-    "released": 2021,
-    "language": "English"
+    "name": "American Cheese",
+    "brand": "Kraft",
+    "purchaseDate": "2023-12-18",
+    "expireDate": "2024-04-23",
+    "price": 12.99,
+    "compartment": "Fridge",
+    "amountOf": 3
 }
 
 ### CREATE 3
-POST http://localhost:3000/mangas HTTP/1.1
+POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Kaiju No.8",
-    "volume": 3,
-    "author": "Naoya Matsumoto",
-    "released": 2021,
-    "language": "English"
+    "name": "American Cheese",
+    "brand": "Kraft",
+    "purchaseDate": "2023-12-18",
+    "expireDate": "2024-04-23",
+    "price": 12.99,
+    "compartment": "Fridge",
+    "amountOf": 3
 }
 
 ### CREATE 4
-POST http://localhost:3000/mangas HTTP/1.1
+POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Kaiju No.8",
-    "volume": 4,
-    "author": "Naoya Matsumoto",
-    "released": 2021,
-    "language": "English"
+    "name": "American Cheese",
+    "brand": "Kraft",
+    "purchaseDate": "2023-12-18",
+    "expireDate": "2024-04-23",
+    "price": 12.99,
+    "compartment": "Fridge",
+    "amountOf": 3
 }
 
 ### CREATE 5
-POST http://localhost:3000/mangas HTTP/1.1
+POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Kaiju No.8",
-    "volume": 5,
-    "author": "Naoya Matsumoto",
-    "released": 2022,
-    "language": "English"
+    "name": "American Cheese",
+    "brand": "Kraft",
+    "purchaseDate": "2023-12-18",
+    "expireDate": "2024-04-23",
+    "price": 12.99,
+    "compartment": "Fridge",
+    "amountOf": 3
 }
 
 ### RETRIEVE all documents.
-GET http://localhost:3000/mangas HTTP/1.1
-
+GET http://localhost:3000/items HTTP/1.1
 
 
 ### RETRIEVE a document by its ID.
 ### Replace the following ID with one that exists in the collection.
-GET http://localhost:3000/mangas/6567b8dd63bf793a382dd7dc HTTP/1.1
+GET http://localhost:3000/items/6580ce42c2c2674034427040 HTTP/1.1
 
 
-### UPDATE one document's year, by ID.
+### UPDATE one document by ID.
 ### Replace the ID in the following request with one that exists
 ### and update the year:
-PUT http://localhost:3000/mangas/6567ddc442af5ff36f190418 HTTP/1.1
+PUT http://localhost:3000/items/6580ce42c2c2674034427040 HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Jujutsu Kaisen",
-    "volume": 1,
-    "author": "Gege Akutami",
-    "released": 2018,
-    "language": "English"
+    "name": "American Cheese",
+    "brand": "Kraft",
+    "purchaseDate": "2023-12-18",
+    "expireDate": "2024-04-23",
+    "price": 10.99,
+    "compartment": "Fridge",
+    "amountOf": 5
 }
 
 ### DELETE by ID (responds with nothing if successful):
-DELETE http://localhost:3000/mangas/64d3afbb0816f78a7cedf90a HTTP/1.1
+DELETE http://localhost:3000/items/6580ccabc2c2674034427038 HTTP/1.1
 
 
 
 ### RETRIEVE all documents (responds with 4 or the original 5):
-GET http://localhost:3000/mangas HTTP/1.1
+GET http://localhost:3000/items HTTP/1.1
 
