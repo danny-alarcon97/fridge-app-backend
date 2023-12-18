@@ -1,4 +1,4 @@
-// Models for the Manga Collection
+// Models for the Item Collection
 
 // Import dependencies.
 import mongoose from "mongoose";
