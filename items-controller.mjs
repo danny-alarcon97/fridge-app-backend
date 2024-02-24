@@ -13,6 +13,7 @@ app.post("/items", (req, res) => {
   items
     .createItem(
       req.body.name,
+      req.body.itemType,
       req.body.brand,
       req.body.purchaseDate,
       req.body.expireDate,
@@ -88,6 +89,7 @@ app.put("/items/:_id", (req, res) => {
     .updateItem(
       req.params._id,
       req.body.name,
+      req.body.itemType,
       req.body.brand,
       req.body.purchaseDate,
       req.body.expireDate,

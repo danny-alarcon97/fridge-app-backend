@@ -18,13 +18,13 @@ POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "name": "American Cheese",
-    "brand": "Kraft",
+    "name": "Peanut Butter",
+    "brand": "Jif",
     "purchaseDate": "2023-12-18",
-    "expireDate": "2024-04-23",
-    "price": 12.99,
-    "compartment": "Fridge",
-    "amountOf": 3
+    "expireDate": "2025-01-23",
+    "price": 3.99,
+    "compartment": "Pantry",
+    "amountOf": 1
 }
 
 ### CREATE 3
@@ -32,13 +32,13 @@ POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "name": "American Cheese",
-    "brand": "Kraft",
+    "name": "Chicken Breast",
+    "brand": "",
     "purchaseDate": "2023-12-18",
-    "expireDate": "2024-04-23",
-    "price": 12.99,
-    "compartment": "Fridge",
-    "amountOf": 3
+    "expireDate": "2024-01-23",
+    "price": 11.99,
+    "compartment": "Freezer",
+    "amountOf": 2
 }
 
 ### CREATE 4
@@ -46,13 +46,13 @@ POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "name": "American Cheese",
-    "brand": "Kraft",
+    "name": "Whole Milk",
+    "brand": "Horizon Organic",
     "purchaseDate": "2023-12-18",
-    "expireDate": "2024-04-23",
-    "price": 12.99,
+    "expireDate": "2024-02-23",
+    "price": 4.89,
     "compartment": "Fridge",
-    "amountOf": 3
+    "amountOf": 1
 }
 
 ### CREATE 5
@@ -60,13 +60,13 @@ POST http://localhost:3000/items HTTP/1.1
 content-type: application/json
 
 {
-    "name": "American Cheese",
-    "brand": "Kraft",
+    "name": "Salt",
+    "brand": "Morton Salt",
     "purchaseDate": "2023-12-18",
-    "expireDate": "2024-04-23",
-    "price": 12.99,
-    "compartment": "Fridge",
-    "amountOf": 3
+    "expireDate": "",
+    "price": 1.99,
+    "compartment": "Pantry",
+    "amountOf": 1
 }
 
 ### RETRIEVE all documents.

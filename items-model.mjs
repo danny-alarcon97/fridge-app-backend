@@ -20,6 +20,7 @@ db.on("error", (error) => {
 // SCHEMA: Define the collection's schema.
 const itemSchema = mongoose.Schema({
   name: { type: String, required: true },
+  itemType: { type: String, required: true },
   brand: { type: String, required: false },
   purchaseDate: { type: Date, required: false },
   expireDate: { type: Date, required: false },
@@ -35,6 +36,7 @@ const Item = mongoose.model("Item", itemSchema);
 // CREATE model
 const createItem = async (
   name,
+  itemType,
   brand,
   purchaseDate,
   expireDate,
@@ -45,6 +47,7 @@ const createItem = async (
   try {
     const item = new Item({
       name,
+      itemType,
       brand,
       purchaseDate,
       expireDate,
@@ -83,6 +86,7 @@ const retrieveItemByID = async (_id) => {
 const updateItem = async (
   _id,
   name,
+  itemType,
   brand,
   purchaseDate,
   expireDate,
@@ -93,7 +97,16 @@ const updateItem = async (
   try {
     const result = await Item.findByIdAndUpdate(
       _id,
-      { name, brand, purchaseDate, expireDate, price, compartment, amountOf },
+      {
+        name,
+        itemType,
+        brand,
+        purchaseDate,
+        expireDate,
+        price,
+        compartment,
+        amountOf,
+      },
       { new: true }
     );
     return result;
