@@ -8,6 +8,9 @@ import "dotenv/config";
 mongoose.connect(process.env.MONGODB_CONNECT_STRING, { useNewUrlParser: true });
 const db = mongoose.connection;
 
+// To allow queries with paths not defined in the schema (prepares for Mongoose 7's default)
+mongoose.set("strictQuery", false);
+
 // Confirm that the database has connected and print a message in the console.
 db.once("open", () => {
   console.log("MongoDB Database connected successfully.");
