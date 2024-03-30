@@ -23,7 +23,7 @@ db.on("error", (error) => {
 // SCHEMA: Define the collection's schema.
 const itemSchema = mongoose.Schema({
   name: { type: String, required: true },
-  itemType: { type: String, required: true },
+  itemType: { type: String, required: false },
   brand: { type: String, required: false },
   purchaseDate: { type: Date, required: false },
   expireDate: { type: Date, required: false },
