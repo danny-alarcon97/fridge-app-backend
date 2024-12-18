@@ -14,7 +14,7 @@ content-type: application/json
 
 
 ### CREATE 2
-POST http://localhost:3000/items HTTP/1.1
+POST http://localhost:8000/pantry-items HTTP/1.1
 content-type: application/json
 
 {
