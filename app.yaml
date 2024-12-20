@@ -1,0 +1,8 @@
+runtime: nodejs14
+
+instance_class: F2
+
+env_variables:
+  MONGODB_CONNECT_STRING: "mongodb+srv://dannyalarcon1997:Cynthia1971@items.snvqzy1.mongodb.net/?retryWrites=true&w=majority&appName=items"
+
+entrypoint: npm start

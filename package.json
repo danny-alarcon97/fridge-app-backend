@@ -1,6 +1,6 @@
 {
   "name": "fridge app backend",
-  "version": "2023",
+  "version": "2024",
   "description": "fridge app mongodb backend",
   "main": "items-model.mjs",
   "scripts": {
